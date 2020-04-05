@@ -10,6 +10,9 @@
 !/README.md
 !app/code/**/*
 /update/
+# 2020-04-05 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "Serve Magento from the `/shop` path": https://github.com/vegandthecity/magento/issues/1
+!setup/view/layout/layout.phtml
 dev
 vendor/codeception
 vendor/magento/framework/Test
