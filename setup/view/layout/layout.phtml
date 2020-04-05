@@ -14,7 +14,12 @@
     <title>{{$state.current.title}}</title>
 	<!-- 2020-04-05 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro -->
 	<?php $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http'; ?>
-	<base href='<?= "$protocol://{$_SERVER['HTTP_HOST']}" . dirname($_SERVER['DOCUMENT_URI']) . '/' ?>'>
+	<?php
+		// 2020-04-05 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+		// `$_SERVER['DOCUMENT_URI']` is undefined on my local workstation (Apache),
+		// so I replaced it with `$_SERVER['SCRIPT_NAME']`.
+	?>
+	<base href='<?= "$protocol://{$_SERVER['HTTP_HOST']}" . dirname($_SERVER['SCRIPT_NAME']) . '/' ?>'>
     <?= $this->headLink()
         ->appendStylesheet($this->basePath() . '/pub/styles/setup.css');
     ?>
