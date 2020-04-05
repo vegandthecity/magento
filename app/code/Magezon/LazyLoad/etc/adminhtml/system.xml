@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magezon
+ *
+ * This source file is subject to the Magezon Software License, which is available at https://magezon.com/license/.
+ * Do not edit or add to this file if you wish to upgrade the to newer versions in the future.
+ * If you wish to customize this module for your needs.
+ * Please refer to https://www.magezon.com for more information.
+ *
+ * @category  Magezon
+ * @package   Magezon_LazyLoad
+ * @copyright Copyright (C) 2018 Magezon (https://magezon.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+	<system>
+		<tab id="magezon" translate="label" sortOrder="200">
+			<label><![CDATA[<span class="mgz-logo">Magezon Extensions</span>]]></label>
+		</tab>
+		<section id="lazyload" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Lazy Load</label>
+			<tab>magezon</tab>
+			<resource>Magezon_LazyLoad::settings</resource>
+			<group id="general" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General Settings</label>
+				<field id="version" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Current Version</label>
+					<frontend_model>Magezon\LazyLoad\Block\Adminhtml\Renderer\Config\Version</frontend_model>
+				</field>
+				<field id="enable" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable Lazy Load</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="lazy_load_images" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Lazy load images</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="lazy_load_iframes" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Lazy load iframes</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="lazy_load_cms" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Lazy load CMS</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="lazy_load_product_attribute" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Lazy load Product Attribute</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Attributes: description, short description,etc</comment>
+				</field>
+				<field id="lazy_load_category_attribute" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Lazy load Category Attribute</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Attributes: description, image</comment>
+				</field>
+				<field id="preview" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Use Low Resolution Image</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Show a low resolution preview image before the real image loads.</comment>
+				</field>
+				<field id="placeholder" translate="label comment" type="image" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Placeholder Image</label>
+					<backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+					<upload_dir config="system/filesystem/media" scope_info="1">magezon/lazyload</upload_dir>
+					<base_url type="media" scope_info="1">magezon/lazyload</base_url>
+				</field>
+				<field id="skip_classes" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Skip images with classes</label>
+					<comment>Comma-separated. Example: "no-lazy, lazy-ignore"</comment>
+				</field>
+				<field id="threshold" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Threshold</label>
+					<validate>validate-not-negative-number</validate>
+					<comment>Amount of pixels below the viewport, in which all images gets loaded before the user sees them.</comment>
+				</field>
+				<field id="delay" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Delay</label>
+					<validate>validate-number</validate>
+					<comment>If you want to load all elements at once after page load, then you can specify a delay time in milliseconds.</comment>
+				</field>
+				<field id="effect" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Effect</label>
+					<source_model>Magezon\LazyLoad\Model\Config\Source\Effect</source_model>
+				</field>
+				<field id="effect_time" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Effect Time</label>
+					<comment>Time in milliseconds the effect should use to view the image.</comment>
+					<validate>validate-not-negative-number</validate>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

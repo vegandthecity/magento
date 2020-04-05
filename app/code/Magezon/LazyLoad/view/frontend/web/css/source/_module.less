@@ -1,0 +1,18 @@
+.lazy-blur {
+	transform: translate3d(0,0,0);
+	transform: translateZ(0);
+	transition: 0.3s filter linear;
+	-o-transition: 0.3s -o-filter linear;
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+
+	&.lazy-loaded{
+		-webkit-filter: blur(0px);
+		filter: blur(0px);
+		image-rendering: initial;
+	}
+}
+
+.owl-carousel .owl-item img.lazy-loading {
+    height: 0;
+}

@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Mageside. All rights reserved.
+ * See MS-LICENSE.txt for license details.
+ */
+?>
+<div class="mageside-hint">
+    <img src="https://mageside.com/skin/frontend/rwd/mageside_shop/images/logo.png"/><br><br>
+    <div class="content">
+        <p>
+            <strong class="module-name">
+                <?php /* @escapeNotVerified */ echo $block->getModuleName() ?>
+                <?php /* @escapeNotVerified */ echo $block->getVersion() ?>
+            </strong>
+            <?php echo __(' by') ?>
+            <a target="_blank" href="https://mageside.com/">
+                <strong>Mageside</strong>
+            </a>
+        </p>
+        <p>
+            <?php echo __('Your feedback for ') ?>
+            <a href="<?php /* @escapeNotVerified */ echo $block->getModulePage() ?>" target="_blank">
+                <?php /* @escapeNotVerified */ echo $block->getModuleName() ?>
+            </a>
+            <?php echo __('is highly appreciated.') ?>
+        </p>
+        <p>
+            <?php echo __('Found an issue? Need help? Got custom request? Please ') ?>
+            <a href="https://mageside.com/contacts/" target="_blank">
+                <?php /* @escapeNotVerified */ echo __('Contact us') ?>
+            </a>.
+        </p>
+        <p>
+            <?php echo __('You can check more extensions designed by our team in our ') ?>
+            <a href="https://mageside.com/" target="_blank"><?php /* @escapeNotVerified */ echo __('Store') ?></a>.
+        </p>
+    </div>
+</div>

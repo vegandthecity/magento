@@ -1,0 +1,51 @@
+<header class="mgz-modal-header">
+	<div class="mgz-modal-header-inner">
+		<h1 class="mgz-modal-title">
+			<i class="mgz-modal-icon {{ mgz.icon }}" ng-if="mgz.icon"></i>
+			<span>{{ mgz.title }}</span>
+		</h1>
+		<span class="mgz-modal-subtitle">{{ mgz.subtitle }}</span>
+		<div class="mgz-modal-search">
+			<input class="mgz-elements-filter" type="text" ng-model="mgz.search" ng-change="mgz.filterElements()" placeholder="Search element by name">
+			<i class="mgz-icon mgz-icon-close" ng-click="mgz.clearSearch()" ng-if="mgz.search"></i>
+			<label for="mgz-elements-filter">
+				<i class="mgz-icon mgz-icon-search"></i>
+			</label>
+		</div>
+		<button class="mgz-modal-action-close" ng-click="mgz.cancel()">
+			<i class="mgz-icon mgz-icon-close"/>
+			<span ng-if="mgz.data.closeText">{{ mgz.closeText }}</span>
+		</button>
+	</div>
+</header>
+<div class="mgz-modal-content">
+	<div class="mgz-modal-contentfont.css-inner">
+		<div class="mgz-elements-list">
+			<uib-tabset active="mgz.active" class="mgz-modal-tab">
+				<uib-tab ng-repeat="tab in mgz.tabs"
+	               heading="{{tab.name}}"
+	               active="tab.active"
+	               disable="tab.disabled" ng-click="mgz.activeTab(tab)">
+	               <div class="mgz-elements-wrapper">
+		               <ul>
+							<li ng-repeat="element in tab.elements" class="mgz-element-{{ element.type }} mgz-gt-{{ element.type }}" data-position="{{ $root.elementManager.getElement(element).sortOrder }}">
+								<magezon-builder-modal-element element="element" ng-click="mgz.addComponent(element)" class="mgz-gt-{{ element.type }}"></magezon-builder-modal-element>
+							</li>
+						</ul>
+					</div>
+	           </uib-tab>
+			</uib-tabset>
+			<div class="tab-content mgz-search-elements">
+				<div class="tab-pane">
+					<div class="mgz-elements-wrapper" ng-if="mgz.searchElements.length">
+						<ul>
+							<li ng-repeat="element in mgz.searchElements" class="mgz-element-{{ element.type }} mgz-gt-{{ element.type }}" data-position="{{ $root.elementManager.getElement(element).sortOrder }}">
+								<magezon-builder-modal-element element="element" ng-click="mgz.addComponent(element)" class="mgz-gt-{{ element.type }}"></magezon-builder-modal-element>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

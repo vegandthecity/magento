@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var $block \Magezon\Builder\Block\Element\Row
+ */
+?>
+<?php
+$element  = $this->getElement();
+$elements = $this->getElements();
+$count    = count($elements);
+$rowType  = $element->getRowType();
+?>
+<?php if ($count) { ?>
+	<div class="mgz-element-inner-content <?= ($rowType=='full_width_row') ? 'mgz-container' : '' ?>">
+		<?php foreach ($elements as $index => $_element) { ?>
+			<?= $this->getChildElementHtml($_element) ?>
+		<?php } ?>
+	</div>
+<?php } ?>

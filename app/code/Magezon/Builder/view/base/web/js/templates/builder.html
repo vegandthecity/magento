@@ -1,0 +1,16 @@
+<div class="mgz-builder-inner" ng-class="{'mgz-fullscreen': $root.fullscreen, 'mgz-draging': $root.draggingElement}">
+	<!-- <div angular-stats watch-count=".watch-count" digest-length=".digest-length"
+	     on-watch-count-update="onWatchCountUpdate(watchCount)"
+     on-digest-length-update="onDigestLengthUpdate(digestLength)">
+	  Watch Count: <span class="watch-count"></span><br />
+	  Digest Cycle Length: <span class="digest-length"></span>
+	</div> -->
+	<div class="mgz-navbar">
+		<ul class="mgz-navbar-nav" magezon-builder-directive-list region="navbar" html-tag="li"></ul>
+	</div>
+	<div class="mgz-builder-content">
+		<div magezon-builder-directive-list region="before-builder-list"></div>
+		<magezon-builder-component-list element="profile" root-list="true" allowed-types="[$root.builderConfig.mainElement]"></magezon-builder-component-list>
+		<div magezon-builder-directive-list region="after-builder-list"></div>
+	</div>
+</div>

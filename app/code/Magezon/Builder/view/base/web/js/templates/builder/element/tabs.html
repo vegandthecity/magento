@@ -1,0 +1,43 @@
+<div class="mgz-block">
+	<div ng-if="element.title || element.description" class="mgz-block-heading mgz-block-heading-align-{{ element.title_align }} {{ element.show_line ? 'mgz-block-heading-line' : '' }}">
+		<div ng-bind-html="getTitleHtml()"></div>
+		<p class="info" ng-if="element.description" ng-bind-html="element.description"></p>
+	</div>
+	<div class="mgz-block-content">
+		<div class="mgz-tabs-list mgz-element-tab-position-{{ element.tab_position }}">
+			<div class="mgz-tabs-nav-container">
+				<ul class="mgz-tabs-nav" dnd-list="element.elements" dnd-drop="dropComponent(item, index, element)" dnd-allowed-types="['tab']">
+					<li ng-repeat="element in element.elements" 
+					dnd-draggable="element" 
+					dnd-effect-allowed="move"
+					dnd-type="element.type"
+					dnd-dragstart="onDragstart(element)"
+					dnd-dragend="onDragend(element)"
+					dnd-external-sources="false"
+					dnd-horizontal-list="true"
+					dnd-moved="removeComponent(element)"
+					ng-class="{'mgz-active': !element.component.hide}"
+					ng-click="activeElement(element)"
+					>
+					<a>
+						<i class="mgz-icon-element {{ element.icon }}" ng-if="element.add_icon&&element.icon&&element.icon_position=='left'"></i>
+						<span>{{ element.title }}</span>
+						<i class="mgz-icon-element {{ element.icon }}" ng-if="element.add_icon&&element.icon&&element.icon_position=='right'"></i>
+					</a>
+				</li>
+				<li class="dndPlaceholder mgz-placeholder"></li>
+				</ul>
+				<ul class="mgz-tabs-nav" ng-if="element.component.control">
+					<li ng-click="addChildrenComponent(element)">
+						<a>
+							<i class="mgz-icon mgz-icon-add"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mgz-tabs-tab">
+				<magezon-builder-component-list template-url='Magezon_Builder/js/templates/builder/tabs.html' element="element"></magezon-builder-component-list>
+			</div>
+		</div>
+	</div>
+</div>

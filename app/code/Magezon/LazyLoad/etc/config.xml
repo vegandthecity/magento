@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magezon
+ *
+ * This source file is subject to the Magezon Software License, which is available at https://magezon.com/license/.
+ * Do not edit or add to this file if you wish to upgrade the to newer versions in the future.
+ * If you wish to customize this module for your needs.
+ * Please refer to https://www.magezon.com for more information.
+ *
+ * @category  Magezon
+ * @package   Magezon_LazyLoad
+ * @copyright Copyright (C) 2018 Magezon (https://magezon.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<lazyload>
+			<general>
+				<enable>1</enable>
+				<lazy_load_images>1</lazy_load_images>
+				<lazy_load_iframes>1</lazy_load_iframes>
+				<lazy_load_cms>1</lazy_load_cms>
+				<lazy_load_product_attribute>1</lazy_load_product_attribute>
+				<lazy_load_category_attribute>1</lazy_load_category_attribute>
+				<preview>1</preview>
+				<skip_classes>no-lazy</skip_classes>
+				<threshold>200</threshold>
+				<delay>-1</delay>
+				<effect>show</effect>
+				<effect_time>0</effect_time>
+			</general>
+		</lazyload>
+	</default>
+</config>

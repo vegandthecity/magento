@@ -1,0 +1,9 @@
+<div class="mgz-element-default">
+	<div class="mgz-element-icon mgz-element-{{ $root.elementManager.getElement(element).type }}-icon">
+		<i class="mgz-element-icon {{ $root.elementManager.getElement(element).icon }}" ng-style="$root.elementManager.getElement(element).icon_styles"></i>
+	</div>
+	<div class="mgz-element-info">
+		<div class="mgz-element-name">{{ $root.elementManager.getElement(element).name }}</div>
+		<div class="mgz-element-description" ng-bind-html="element.magento_widget"></p>
+	</div>
+</div>

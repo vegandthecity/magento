@@ -1,0 +1,37 @@
+<header class="mgz-modal-header">
+	<div class="mgz-modal-header-inner">
+		<h1 class="mgz-modal-title">
+			<span magezon-builder-directive-list element="element" region="before-modal-title"></span>
+			<i class="mgz-modal-icon {{ mgz.icon }}" ng-if="mgz.icon"></i>
+			<span>{{ mgz.title }}</span>
+			<span magezon-builder-directive-list element="element" region="after-modal-title"></span>
+		</h1>
+		<span class="mgz-modal-subtitle">{{ mgz.subtitle }}</span>
+		<!-- <button class="mgz-icon mgz-icon-fullscreen" ng-click="mgz.cancel()">
+			<i class="mgz-icon mgz-icon-close"/>
+			<span ng-if="mgz.data.closeText">{{ mgz.closeText }}</span>
+		</button> -->
+		<button class="mgz-modal-action-close" ng-click="mgz.cancel()">
+			<i class="mgz-icon mgz-icon-close"/>
+			<span ng-if="mgz.data.closeText">{{ mgz.closeText }}</span>
+		</button>
+		<a ng-if="$root.elementManager.getElement(element).documentation" class="mgz-modal-help-link" target="_blank" ng-href="{{ $root.elementManager.getElement(element).documentation }}"><i class="fas mgz-fa-external-link-alt"></i> Help</a>
+	</div>
+</header>
+<div class="mgz-modal-content">
+	<div class="mgz-spinner"><i></i></div>
+	<div class="mgz-modal-contentfont.css-inner">
+		<div class="mgz-elements-list">
+			<form ng-submit="mgz.onSubmit()" name="mgz.form" novalidate>
+				<formly-form model="mgz.model" fields="mgz.tabs" options="mgz.options"></formly-form>
+			</form>
+		</div>
+	</div>
+</div>
+<footer class="mgz-modal-footer">
+	<div class="mgz-modal-footer-inner">
+    	<button ng-if="$root.magezonBuilderService.canReplace(element)" type="button" class="mgz-btn mgz-btn-replace" ng-click="mgz.replace()">Replace with</button>
+    	<button type="button" class="mgz-btn mgz-btn-cancel" ng-click="mgz.cancel()">Close</button>
+		<button type="submit" class="mgz-btn mgz-btn-save" ng-click="mgz.onSubmit()" ng-disabled="mgz.form.$invalid">Save</button>
+	</div>
+</footer>
