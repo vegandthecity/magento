@@ -9,9 +9,10 @@
 !/composer.json
 !/README.md
 !app/code/**/*
+!app/etc/config.php
 /update/
-# 2020-04-05 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
-# "Serve Magento from the `/shop` path": https://github.com/vegandthecity/magento/issues/1
+# 2020-04-06 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "Disable the `Vertex_Tax` crapware": https://github.com/vegandthecity/magento/issues/4
 !setup/view/layout/layout.phtml
 dev
 vendor/codeception
