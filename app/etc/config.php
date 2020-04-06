@@ -279,6 +279,6 @@ return [
         'Xtento_PdfCustomizer' => 1,
         'Xtento_XtCore' => 1,
         'Yireo_DisableLog2' => 1,
-        'Yotpo_Yotpo' => 1
+        'Yotpo_Yotpo' => 0
     ]
 ];
