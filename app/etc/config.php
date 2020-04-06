@@ -194,7 +194,7 @@ return [
         'Magento_SendFriend' => 1,
         'Magento_SendFriendGraphQl' => 1,
         'Magento_InventoryShippingAdminUi' => 1,
-        'Magento_Signifyd' => 1,
+        'Magento_Signifyd' => 0,
         'Magento_Sitemap' => 1,
         'Magento_InventoryGraphQl' => 1,
         'Magento_UrlRewriteGraphQl' => 1,
