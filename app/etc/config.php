@@ -259,7 +259,7 @@ return [
         'Mirasvit_CacheWarmer' => 1,
         'Mirasvit_Core' => 1,
         'Mirasvit_Report' => 1,
-        'Temando_Shipping' => 1,
+        'Temando_Shipping' => 0,
         'Themevast_Blog' => 1,
         'Themevast_Brand' => 1,
         'Themevast_Categorytab' => 1,
