@@ -241,6 +241,8 @@ return [
         'Klarna_Kp' => 1,
         'Magento_PaypalReCaptcha' => 1,
         'MSP_TwoFactorAuth' => 1,
+        'Magefan_Community' => 1,
+        'Magefan_ConflictDetector' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_AjaxLayer' => 1,
         'Mageplaza_CurrencyFormatter' => 1,
