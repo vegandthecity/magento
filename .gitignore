@@ -8,16 +8,22 @@
 !/.gitignore
 !/composer.json
 !/README.md
-!app/code/**/*
-!app/etc/config.php
+!/app/code/**/*
+!/app/etc/config.php
 /update/
 # 2020-04-06 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # "Disable the `Vertex_Tax` crapware": https://github.com/vegandthecity/magento/issues/4
-!setup/view/layout/layout.phtml
-dev
-vendor/codeception
-vendor/magento/framework/Test
-vendor/magento/magento2-base
-vendor/magento/magento2-functional-testing-framework
-vendor/mpdf
-vendor/tubalmartin
+!/setup/view/layout/layout.phtml
+# 2020-04-11 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «Argument 1 passed to Magento\Elasticsearch\Model\Adapter\FieldMapper\Product\AttributeProvider::getByAttributeCode()
+# must be of the type string, null given,
+# called in vendor/magento/module-elasticsearch/SearchAdapter/Query/Builder/Sort.php on line 92»
+# https://github.com/vegandthecity/magento/issues/19
+!/vendor/magento/module-elasticsearch/SearchAdapter/Query/Builder/Sort.php
+/dev
+/vendor/codeception
+/vendor/magento/framework/Test
+/vendor/magento/magento2-base
+/vendor/magento/magento2-functional-testing-framework
+/vendor/mpdf
+/vendor/tubalmartin
