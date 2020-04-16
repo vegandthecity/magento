@@ -299,7 +299,7 @@ return [
         'Magezon_LazyLoad' => 1,
         'Magezon_PageBuilder' => 1,
         'Meetanshi_Matrixrate' => 1,
-        'Mirasvit_CacheWarmer' => 1,
+        'Mirasvit_CacheWarmer' => 0,
         'Mirasvit_Core' => 1,
         'Mirasvit_Report' => 1,
         'Temando_Shipping' => 0,
