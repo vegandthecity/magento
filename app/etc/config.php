@@ -318,6 +318,7 @@ return [
         'Vertex_AddressValidation' => 0,
         'Wallee_Payment' => 1,
         'Webkul_Odoomagentoconnect' => 1,
+        'Webkul_Odoomagentoconnectcustomisation' => 1,
         'Webkul_Odoomagentoshop' => 1,
         'Xtento_PdfCustomizer' => 1,
         'Xtento_XtCore' => 1,
