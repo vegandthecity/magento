@@ -11,7 +11,6 @@
         "sort-packages": true
     },
     "require": {
-        "mage2pro/core": "*",
         "magefan/module-conflict-detector": "*",
         "magento/product-community-edition": "2.3.4",
         "mirasvit/module-cache-warmer": "*",
