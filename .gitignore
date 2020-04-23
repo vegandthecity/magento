@@ -14,6 +14,10 @@
 # 2020-04-06 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # "Disable the `Vertex_Tax` crapware": https://github.com/vegandthecity/magento/issues/4
 !/setup/view/layout/layout.phtml
+# 2020-04-23 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "How to fix the «Invalid template file» / «require_js.phtml» failure of Magento 2.3.x in Windows?"
+# https://mage2.pro/t/5774
+!/vendor/magento/framework/View/Element/Template/File/Validator.php
 # 2020-04-11 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «Argument 1 passed to Magento\Elasticsearch\Model\Adapter\FieldMapper\Product\AttributeProvider::getByAttributeCode()
 # must be of the type string, null given,
