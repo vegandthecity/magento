@@ -51,7 +51,7 @@
         <referenceContainer name="page.top">
             <container name="top_menu_wrapper" htmlTag="div" htmlClass="top_menu_wrapper" before="-">
                 <container name="top_menu_wrapper_container" label="TopMenu" htmlTag="div" htmlClass="container" before="-">
-                    <block class="Themevast\MegaMenu\Block\Widget\Megamenu" name="megamenu_top" template="Themevast_MegaMenu::default-menu.phtml" />
+				<!--       <block class="Themevast\MegaMenu\Block\Widget\Megamenu" name="megamenu_top" template="Themevast_MegaMenu::default-menu.phtml" /> -->
                 </container>
             </container>
         </referenceContainer>
