@@ -13,10 +13,11 @@
     "require": {
         "magefan/module-conflict-detector": "*",
         "magento/product-community-edition": "2.3.4",
+        "mageworx/module-deliverydatemeta": "^1.8",
         "mirasvit/module-cache-warmer": "*",
         "vegandthecity/core": "*",
         "wallee/magento-2-3": "^1.0",
-        "xtento/pdfcustomizer": "^2.10",
+        "xtento/pdfcustomizer": "2.11.2",
         "yireo/magento2-disablelog2": "*"
     },
     "require-dev": {
@@ -77,6 +78,10 @@
         "xtento": {
             "type": "composer",
             "url": "https://repo.xtento.com"
+        },
+        "mageworx_packages": {
+            "type": "composer",
+            "url": "https://packages.mageworx.com/"
         }
     },
     "extra": {

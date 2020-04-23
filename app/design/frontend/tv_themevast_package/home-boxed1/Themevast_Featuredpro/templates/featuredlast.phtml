@@ -1,0 +1,92 @@
+<?php 
+use Magento\Framework\App\Action\Action;?>
+	<?php
+		$_product = $this->getProducts()->getFirstItem(); 
+		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();					
+		$product = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getId());        
+		$images = $product->getMediaGalleryImages();		
+		$_helper = $this->helper('Magento\Catalog\Helper\Output');
+	?>
+	<div class="lastfeatured">
+		<?php if($this->getConfig('title')){?>
+			<div class="title-product-heading title-featured-heading">
+				<h2><?php echo $this->getConfig('title')?></h2>
+			</div>
+		<?php }?>
+		<?php if(!$this->getProducts()->getSize()): ?> 
+			<div class="message info empty">	
+				<p class="note-msg"><?php echo __('There are no products matching the selection.') ?></p>
+			</div>
+		<?php else: ?>	
+					<div class="js-carousel-1 owl-carousel">
+						<?php $i=0; foreach ($images as $child): ?>
+							<div class="item">
+									<img src="<?php echo $child->getUrl(); ?>" > 
+							</div>
+						<?php endforeach; ?>
+					</div>
+					<div class="js-carousel-2 owl-carousel">
+						<?php $i=0; foreach ($images as $child): ?>
+							<div class="item">
+									<img src="<?php echo $child->getUrl(); ?>" > 
+							</div>
+						<?php endforeach; ?>
+					</div>
+		<script type="text/javascript">
+				require([
+					'jquery',
+					'mage/mage',
+					'themevast/owl'
+				], function ($) {
+					'use strict';
+				$(document).ready(function() {
+					var carousel1 = '.js-carousel-1';
+					var carousel2 = '.js-carousel-2';
+
+					var owlCarousel1 = $(carousel1).owlCarousel({
+					  items: 1,
+					  dots:true,
+					});
+					var owlCarousel2 = $(carousel2).owlCarousel({
+					  items: 3,
+					  margin: 10,
+					  dots:false
+					});
+
+					tvsyncgetcurrent();
+
+					owlCarousel1.on('changed.owl.carousel', function() {
+					  tvsyncgetcurrent();
+					});
+					owlCarousel2.on('changed.owl.carousel', function(event) {
+					  tvsyncgetcurrent();
+					});
+
+					owlCarousel2.find('.item').click(function() {
+					  var itemIndex = $(this).parent().index();
+					  owlCarousel1.trigger('to.owl.carousel', itemIndex);
+					  tvsyncgetcurrent();
+					});
+
+					function tvsyncgetcurrent() {
+					  setTimeout(function() {
+						var dqd = $('.js-carousel-1 .owl-item.active').index();
+						$('.js-carousel-2 .owl-item').removeClass('current');
+						var currentItem = $('.js-carousel-2 .owl-item:nth-child(' + (dqd + 1) + ')');
+						currentItem.addClass('current');
+
+						if (!currentItem.hasClass('active')) {
+						  if (currentItem.prevAll('.active').length > 0) {
+							owlCarousel2.trigger('next.owl.carousel');
+						  }
+						  if (currentItem.nextAll('.active').length) {
+							owlCarousel2.trigger('prev.owl.carousel');
+						  }
+						}
+					  }, 100);
+					}
+				});
+				})
+			</script>
+	<?php endif; ?>
+	</div>

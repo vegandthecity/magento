@@ -14,6 +14,6 @@
 			<block class="Themevast\MegaMenu\Block\Widget\Megamenu" name="megamenu_top" template="Themevast_MegaMenu::default-menu.phtml" />
 		</referenceBlock>
 		
-		 <!-- <referenceBlock name="catalog.topnav" template="Themevast_MegaMenu::default-menu.phtml" />   -->
+		<!-- <referenceBlock name="catalog.topnav" template="Themevast_MegaMenu::default-menu.phtml" />  -->
     </body>
 </page>

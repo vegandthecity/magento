@@ -1,0 +1,93 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    //  Newsletter subscription
+    .block.newsletter {
+        margin-bottom: 20px;
+        .form.subscribe {
+            width: 100%;
+            .label-newsletter {
+                margin-bottom: 15px;
+                display: block;
+            }
+        }
+        
+        .fieldset {
+            display: table-cell; 
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+        }
+        .field {
+            margin: 0 0 15px;
+
+            .control {
+                .lib-icon-font(
+                @icon-envelope,
+                @_icon-font-size: 16px,
+                @_icon-font-line-height: 32px,
+                @_icon-font-color: @form-element-input-placeholder__color,
+                @_icon-font-margin: 0 0 0 8px
+                );
+                &:before {
+                    position: absolute;
+                    color: #999;
+                }
+                display: block;
+            }
+        }
+
+        input {
+            padding-left: 35px;
+            line-height: 32px;
+            color: #999;
+            &::placeholder {
+               color: #999; 
+            }
+        }
+
+        .title {
+            display: none;
+        }
+
+        .label {
+            &:extend(.abs-visually-hidden all);
+        }
+
+        .actions {
+            display: table-cell;
+            vertical-align: top;
+            width: 1%;
+        }
+
+        .action.subscribe {
+            background: #2f2f2f;
+            color: #fff;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-family: @font__title;
+            border: 0;
+            border-radius: 0;
+            &:hover {
+                background: @main__color;
+            }
+        }
+    }
+}
+
+//
+//  Desktop 
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+         
+    }
+}

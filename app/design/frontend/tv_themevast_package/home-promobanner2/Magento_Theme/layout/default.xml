@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel.wrapper">
+            <container name="header.toplinks" htmlTag="div" htmlClass="header__toplinks">
+                <container name="toplinks.container" htmlTag="div" htmlClass="container">
+                    <container name="row_top_links" htmlTag="div" htmlClass="row">
+                        <container name="toplinks.col1" htmlTag="div" htmlClass="col-md-12 col-sm-12 hidden-xs">
+                            <block class="Magento\Cms\Block\Block" name="block.welcome.header">
+                                <arguments>
+                                    <argument name="block_id" xsi:type="string">block_promotion</argument>
+                                </arguments>
+                            </block>
+                        </container>
+                        
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header-wrapper">
+            <container name="row_header_content" htmlTag="div" htmlClass="row">
+                <container name="header_col1" htmlTag="div" htmlClass="col-xs-12 col-sm-4 hidden-xs" before="-">
+                    <block class="Magento\Cms\Block\Block" name="block.contact.header">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">header_social</argument>
+                        </arguments>
+                    </block>
+                    <container name="language.blocks" htmlTag="div" htmlClass="language_blocks" />
+                </container>
+                <container name="header_col2" htmlTag="div" htmlClass="col-sm-4 col-logo" after="header_col1">
+                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                        <arguments>
+                            <argument name="logo_img_width" xsi:type="number">152</argument>
+                            <argument name="logo_img_height" xsi:type="number">60</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="header_col3" htmlTag="div" htmlClass="col-sm-4 col-right" after="-">
+                    <container name="quick.access" htmlTag="div" htmlClass="quick_access" />
+                    <container name="top_cart_mini" htmlTag="div" htmlClass="top_cart_mini" />
+
+                </container>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="page.top">
+            <container name="top_menu_wrapper" htmlTag="div" htmlClass="top_menu_wrapper" before="-">
+                <container name="div.menu_search" htmlTag="div" htmlClass="container">
+                    <container name="div.menu_search2" htmlTag="div" htmlClass="menu_search">
+                        <block class="Themevast\MegaMenu\Block\Widget\Megamenu" name="megamenu_top" template="Themevast_MegaMenu::default-menu.phtml" />
+                        <container name="search.menu" htmlTag="div" htmlClass="menu_search1" />
+                    </container>
+                </container>
+            </container>
+
+        </referenceContainer>
+
+        <referenceContainer name="footer-container">
+            <container name="block.footer.top" htmlTag="div" htmlClass="footer_top_container">
+                <block class="Magento\Cms\Block\Block" name="footer.top" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_information</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="footer.bottom" htmlTag="div" htmlClass="footer_bottom" after="-" >
+                <container name="footer.container" htmlTag="div" htmlClass="container">
+                    <container name="footer.container_inner" htmlTag="div" htmlClass="container_inner">
+                        <container name="footer.copyright" htmlTag="div" htmlClass="footer_copyright" after="-" />
+                        <block class="Magento\Cms\Block\Block" name="footer.links">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">footer_links_bottom</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Cms\Block\Block" name="footer.payment" after="-">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">footer_payment</argument>
+                            </arguments>
+                        </block>
+                    </container>
+                </container>
+            </container>
+            <block class="Magento\Framework\View\Element\Template" name="back.to.top" template="Magento_Theme::html/backtotop.phtml" after="footer.copyright"/>
+        </referenceContainer>
+
+        <referenceBlock name="header.panel" remove="true"/>
+        <referenceBlock name="footer" remove="true"/>
+        <referenceBlock name="cms_footer_links_container" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="store_switcher" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="store.links" remove="true"/>
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="my-account-link" remove="true"/>
+        <referenceBlock name="wish-list-link" remove="true"/>
+        <referenceBlock name="navigation.sections" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="wishlist_sidebar" remove="true" />
+
+        <move element="register-link" destination="top.links" after="-"/>
+        <move element="minicart" destination="top_cart_mini" after="-"/>
+        <move element="top.search" destination="search.menu" after="-"/>
+        <move element="store_language" destination="language.blocks" after="-"/>
+        
+        <move element="top.links" destination="quick.access" after="-"/>
+        <move element="header-wrapper" destination="header.panel.wrapper" after="-"/>
+        <move element="copyright" destination="footer.copyright" before="-"/>
+        <move element="footer.links" destination="footer.copyright" before="-"/>
+    </body>
+</page>

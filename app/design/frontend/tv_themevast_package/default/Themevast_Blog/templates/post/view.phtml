@@ -1,0 +1,51 @@
+<?php
+    $_post = $this->getPost();
+    $_postUrl = $_post->getPostUrl();
+    $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+?>
+<div class="post-view">
+    <div class="post-holder post-holder-<?php echo $_post->getId() ?>">
+        <div class="post-images">
+            <a href="<?php echo $_post->getPostUrl() ?>">
+                <img src="<?php echo $this->getMediaFolder().$_post->getThumbnailimage() ?>"/>
+            </a>
+        </div> 
+        <div class="post-content">
+            <h2 class="post-title">
+                <a class="post-item-link"
+                   href="<?php echo $_postUrl ?>">
+                    <?php echo $_postName; ?>
+                </a>
+            </h2>
+            <div class="time-author clearfix">
+                <?php if ($_categoriesCount = $_post->getCategoriesCount()) { ?>
+                    <?php $n = 0; foreach($_post->getParentCategories() as $ct) { $n++; ?>
+                        <span class="categories"><?php echo $block->escapeHtml($ct->getTitle()) ?></span>
+                        <?php if ($n==1) {break;} ?>
+                    <?php } ?>
+                <?php } ?>
+                <?php 
+                    $date = $_post->getPublishTime();
+                ?>
+                <?php if ($_author = $_post->getAuthor()) { ?>
+                    <span class="item post-author"><span class="label_1"><?php /* @escapeNotVerified */ echo __('By:'); ?></span><?php echo $block->escapeHtml($_author->getTitle()) ?></span>
+                <?php } ?>
+                <span class="date-time">
+                    <?php /* @escapeNotVerified */ echo __('Date:'); ?>
+                    <span><?php echo __(date("M", strtotime($date))) ?></span>
+                    <span><?php echo __(date("d", strtotime($date))) ?>,</span>
+                    <span><?php echo __(date("Y", strtotime($date))) ?></span>
+                </span>
+            </div>
+            <div class="addthis_inline_share_toolbox_pzhd"></div>
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-549fdf445bd3a1b9"></script>
+            <div class="post-des">
+                <?php echo $block->getContent() ?>
+            </div>
+             
+        </div>
+        <div class="post-bottom">
+            <?php echo $this->getChildHtml('blog.post.bottom') ?>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div id="top">
+    <a class="scrollup" href="javascript:void(0)">
+        <i class="fa fa-angle-up"></i>
+        <span>Top</span>
+    </a>
+</div>
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ],function($){
+        $(document).ready(function($) {
+            if($('.scrollup').length > 0) {
+                $(document).ready(function(){
+                    $(window).scroll(function(){
+                        if ($(this).scrollTop() > 100) {
+                            $('.scrollup').fadeIn();
+                        } else {
+                            $('.scrollup').fadeOut();
+                        }
+                    });
+                    $('.scrollup').click(function(){
+                        $('html, body').animate({ scrollTop: 0 }, 600);
+                        return false;
+                    });
+                });
+            }
+        });
+    });
+</script>

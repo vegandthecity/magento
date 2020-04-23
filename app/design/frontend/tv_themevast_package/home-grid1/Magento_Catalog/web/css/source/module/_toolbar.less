@@ -1,0 +1,279 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@toolbar-mode-icon-font-size: 16px;
+@toolbar-background: transparent;
+@toolbar-element-background: @color-gray94;
+@toolbar-element__color: @color-gray37;
+@pager-action__background: @toolbar-element-background;
+@pager-action__hover__background: darken(@toolbar-element-background, 7%);
+@pager__font-weight: @font-weight__bold;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-products {
+        .columns {
+            padding-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .toolbar {
+        margin-bottom: @indent__l;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        display: table;
+        width: 100%;
+        select {
+            background-color: #fff;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+            padding: 0 20px 0 10px;
+            border: 0;
+            background-size: 30px 40px;
+            background-position: 108% 45%;
+            border-bottom: 2px solid #000;
+            height: 22px;
+            &:focus {
+                outline: none;
+                box-shadow: none; 
+            }
+        }
+
+        &-amount {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .page-with-filter & {
+            &-amount {
+                position: static;
+            }
+        }
+
+        &-products {
+            .lib-css(background-color, @toolbar-background);
+
+            .pages {
+                display: none;
+
+                .products.wrapper ~ & {
+                    display: block;
+                }
+            }
+        }
+
+        .pages {
+            .pages-items {
+                li {
+                    a {
+                        box-shadow: none;
+                        border-radius: 0;
+                        font-size: 14px;
+                        color: #666;
+                        &:hover {
+                            color: @main__color;
+                        }
+                        &:before {
+                            font-size: 12px;
+                        }
+                    }
+                    strong.page {
+                        padding: 0 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .sorter {
+        display: table-cell;
+        padding: 0;
+        vertical-align: top;
+        &-options {
+            margin: 0 @indent__xs 0 7px;
+            width: auto;
+        }
+        .sorter-action {
+            color: #aaa;
+            margin: 0 5px;
+            line-height: 25px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        &-action {
+            span {
+                display: none;
+            }
+            &:before {
+                font-family: FontAwesome;
+            }
+            &.sort-asc {
+                &:before {
+                    content: "\f176";
+                }
+            }
+            &.sort-desc {
+                &:before {
+                    content: "\f175";
+                }
+            }
+        }
+    }
+
+    .modes {
+        display: none;
+    }
+
+    .limiter {
+        display: table-cell;
+        vertical-align: top;
+        text-align: right;
+        &-options {
+            margin: 0 5px 0 7px;
+            width: auto;
+        }
+        
+        &-label {
+            font-weight: 400;
+        }
+
+        .control {
+            display: inline-block;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .toolbar-products {
+        margin-bottom: 0;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-products {
+        .columns {
+            padding-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+
+    .toolbar {
+        .products.wrapper ~ & .pages {
+            float: left;
+            margin-bottom: 0;
+        }
+    }
+
+    .modes {
+        display: inline-block;
+        float: left;
+        margin-right: @indent__base;
+        padding-top: 10px;
+        .products.wrapper ~ .toolbar & {
+            display: none;
+        }
+    }
+
+    .modes-label {
+        &:extend(.abs-visually-hidden-desktop all);
+    }
+
+    .modes-mode {
+        color: #999;
+        float: left;
+        font-weight: 400;
+        line-height: 1;
+        text-align: center;
+        margin-right: 10px;
+        display: inline-block;
+        text-decoration: none;
+
+        .modes-label + & {
+            border-radius: 3px 0 0 3px;
+        }
+
+        &:hover {
+            &:before {
+                color: @main__color;
+            }
+        }
+
+        &.active {
+            &:before {
+                color: @main__color;
+            }
+        }
+
+        .lib-icon-font(
+        @icon-grid,
+        @_icon-font-size: @toolbar-mode-icon-font-size,
+        @_icon-font-text-hide: true,
+        @_icon-font-color: @text__color__muted,
+        @_icon-font-color-hover: @text__color__muted
+        );
+    }
+    a.modes-mode {
+        &:hover {
+            &:before {
+                color: @main__color;
+            }
+        }
+    }
+
+    .sorter {
+        .page-products & {
+            position: static;
+        }
+    }
+
+    .mode-list {
+        &:before {
+            content: @icon-list;
+        }
+    }
+
+    .limiter {
+        .products.wrapper ~ .toolbar & {
+            display: block;
+        }
+    }
+}
+
+.toolbar-bottom {
+    .toolbar {
+        border-bottom: 0;
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+        .modes, .toolbar-amount, .toolbar-sorter {
+            display: none;
+        }
+        .pages {
+            display: block !important;
+        }
+        .limiter {
+            display: none;
+        }
+    }
+}

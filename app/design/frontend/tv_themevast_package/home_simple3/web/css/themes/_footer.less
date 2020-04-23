@@ -1,0 +1,169 @@
+//
+//  Footer
+//  ---------------------------------------------
+
+.page-footer {
+    background: #000;
+   .footer_top_container {
+        padding: 40px 0 0;
+        color: #aaa;
+        .block_footer_bottom {
+            overflow: hidden;
+            .block {
+                .block-title {
+                    margin-bottom: 30px;
+                    strong {
+                        text-transform: uppercase;
+                        color: #fff;
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                    }
+                }
+                .about-des {
+                    color: #666;
+                    margin-bottom: 20px;
+                }
+                .contact-des {
+                    p {
+                        strong {
+                            color: #fff;
+                            margin-right: 7px;
+                        }
+                    }
+                }
+                .block-content {
+                    > a {
+                        color: #fff;
+                        display: block;
+                        font-size: 18px;
+                        border: 2px solid #333333;
+                        text-align: center;
+                        padding: 10px 15px;
+                        &:hover {
+                            background: @main__color;
+                            border-color: @main__color;
+                        }
+                        .fa {
+                            margin-right: 7px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                .nav-links {
+                    li {
+                        a {
+                            color: #aaa;
+                            line-height: 30px;
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                .newsletter {
+                    .control {
+                        position: relative;
+                        input {
+                            height: 45px;
+                            line-height: 45px;
+                            background: none;
+                            border: 2px solid #333;
+                            color: #aaa;
+                            padding-left: 15px;
+                            display: block;
+                            padding-right: 100px;
+                            &::placeholder {
+                                color: #aaa;
+                            }
+                        }
+                    }
+                    button.subscribe  {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        height: 45px;
+                        line-height: 30px;
+                        background: #fff;
+                        color: #333;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-family: @font__body;
+                        &:hover {
+                            background: @main__color;
+                            color: #fff;
+                            border-color: @main__color;
+                        }
+                    }
+                }
+               
+            }
+        }
+   }
+   .footer_bottom {
+        .container_inner {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: table;
+            width: 100%;
+            padding: 15px 0;
+            .footer_copyright {
+                display: table-cell;
+                text-align: left;
+                vertical-align: middle;
+                .footer_links {
+                    float: left;
+                    li {
+                        display: inline-block;
+                        line-height: 15px;
+                        padding-right: 15px;
+                        margin: 0 15px 0 0;
+                        border-right: 1px solid #555;
+                        a {
+                            color: #aaa;
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                .copyright {
+                    float: left;
+                    color: #aaa;
+                    font-size: 14px;
+                }  
+           }
+           > p {
+                display: table-cell;
+                text-align: right;
+            }
+        }
+   }
+   
+}
+
+.scrollup {
+    background: @main__color;
+    bottom: 82px;
+    display: block;
+    position: fixed;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    text-align: center;
+    font-size: 13px;
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 2px;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+    &:hover {
+        background: #000;
+        text-decoration: none;
+    }
+    .fa {
+        display: block;
+    }
+}

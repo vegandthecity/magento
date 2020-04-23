@@ -1,0 +1,47 @@
+<?php
+	use \Magento\Framework\Stdlib\StringUtils;
+?>
+<?php
+	$stringFilter = new \Magento\Framework\Stdlib\StringUtils;
+    $_post = $this->getPost();
+    $_postUrl = $_post->getPostUrl();
+    $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+?>
+<li class="post-holder post-holder-<?php echo $_post->getId() ?> col-sm-6">
+	<div class="post-images">
+		<a href="<?php echo $_post->getPostUrl() ?>">
+			<img src="<?php echo $this->getMediaFolder().$_post->getThumbnailimage() ?>"/>
+		</a>
+	</div>
+	<div class="post-content">
+		<div class="time-author clearfix">
+			<?php if ($_categoriesCount = $_post->getCategoriesCount()) { ?>
+				<?php $n = 0; foreach($_post->getParentCategories() as $ct) { $n++; ?>
+					<span class="categories"><?php echo $block->escapeHtml($ct->getTitle()) ?></span>
+					<?php if ($n==1) {break;} ?>
+				<?php } ?>
+			<?php } ?>
+			<?php 
+				$date = $_post->getPublishTime();
+			?>
+			<span class="date-time">
+				<span><?php echo __(date("M", strtotime($date))) ?></span>
+				<span><?php echo __(date("d", strtotime($date))) ?>,</span>
+				<span><?php echo __(date("Y", strtotime($date))) ?></span>
+			</span>
+			<?php if ($_author = $_post->getAuthor()) { ?>
+				<span class="item post-author"><?php echo $block->escapeHtml($_author->getTitle()) ?></span>
+			<?php } ?>
+		</div>
+		<h2 class="post-title">
+			<a class="post-item-link"
+			   href="<?php echo $_postUrl ?>">
+				<?php echo $_postName; ?>
+			</a>
+		</h2> 
+		<div class="post-des"><?php echo $stringFilter->substr($_post->getShortContent(),0,335); ?>&nbsp;[…]</div>
+		<div class="read-more">
+			<a href="<?php echo $_post->getPostUrl() ?>"><?php /* @escapeNotVerified */ echo __('Read the story'); ?><i class="fa fa-caret-right"></i></a>
+		</div>
+	</div> 
+</li>

@@ -1,0 +1,16 @@
+<?php
+$time_start    = microtime(true);
+$styleHtml     = $this->getStylesHtml() . $block->getCustomCss();
+$html          = $this->getElementsHtml();
+$customClasses = $this->getCustomClasses() ? ' ' . $this->getCustomClasses() : '';
+?>
+<?php if (trim($html)) { ?>
+<div class="magezon-builder magezon-builder-preload<?= $customClasses ?>">
+	<?= $html ?>
+</div>
+<?php if ($styleHtml) { ?><style class="magezon-builder-style"><?= $styleHtml ?></style><?php } ?>
+<?php } ?>
+<?php
+$time_end = microtime(true);
+$execution_time = ($time_end - $time_start) / 60;
+//echo '<b>Total Execution Time:</b> ' . $execution_time;

@@ -169,7 +169,7 @@
 			<parameter name="banner_product_cat1" xsi:type="block" required="false" visible="true">
                 <label translate="true"></label>
 				<depends><parameter name="show_banner_in_category" value="1" /></depends>
-				<description translate="true">Banner position 1.Link in folder media. Ex: wysiwyg/folder...</description>
+				<!--<description translate="true">Banner position 1.Link in folder media. Ex: wysiwyg/folder...</description>-->
                 <block class="Themevast\Categorytab\Block\Adminhtml\Form\Field\Media">
                     <data>
                         <item name="button" xsi:type="array">
@@ -181,7 +181,7 @@
 			<parameter name="banner_product_cat2" xsi:type="block" required="false" visible="true">
                 <label translate="true"></label>
 				<depends><parameter name="show_banner_in_category" value="1" /></depends>
-				<description translate="true">Banner position 2.Link in folder media. Ex: wysiwyg/folder...</description>
+				<!--<description translate="true">Banner position 2.Link in folder media. Ex: wysiwyg/folder...</description>-->
                 <block class="Themevast\Categorytab\Block\Adminhtml\Form\Field\Media">
                     <data>
                         <item name="button" xsi:type="array">
@@ -225,7 +225,14 @@
                        source_model="Magento\Config\Model\Config\Source\Yesno">
                 <label translate="true">Show Slider Bestseller</label>
 				<depends><parameter name="show_best" value="1" /></depends>
-				<value>1</value>
+				<options>
+                    <option name="yes" value="1" >
+                        <label translate="true">Yes</label>
+                    </option>
+					 <option name="no" value="0" selected="true" >
+                        <label translate="true">No</label>
+                    </option>
+                </options>
             </parameter>
 			<parameter name="templatetype" xsi:type="select" visible="true"
                        source_model="Themevast\Categorytab\Model\Config\Source\Type">

@@ -1,0 +1,226 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/* @var $block \Magento\Catalog\Block\Product\AbstractProduct */
+?>
+
+<?php
+switch ($type = $block->getType()) {
+
+    case 'related':
+        /** @var \Magento\Catalog\Block\Product\ProductList\Related $block */
+        if ($exist = $block->getItems()->getSize()) {
+            $type = 'related';
+            $class = $type;
+
+            $image = 'related_products_list';
+            $title = __('Related Products');
+            $items = $block->getItems();
+            $limit = 0;
+            $shuffle = 0;
+            $canItemsAddToCart = $block->canItemsAddToCart();
+
+            $showAddTo = true;
+            $showCart = false;
+            $templateType = null;
+            $description = false;
+        }
+    break;
+
+    case 'upsell':
+        /** @var \Magento\Catalog\Block\Product\ProductList\Upsell $block */
+        if ($exist = count($block->getItemCollection()->getItems())) {
+            $type = 'upsell';
+            $class = $type;
+
+            $image = 'upsell_products_list';
+            $title = __('YOU MAY ALSO LIKE…');
+            $items = $block->getItemCollection()->getItems();
+            $limit = $block->getItemLimit('upsell');
+            $shuffle = 0;
+
+            $showAddTo = false;
+            $showCart = false;
+            $templateType = null;
+            $description = false;
+            $canItemsAddToCart = false;
+        }
+    break;
+	
+	 case 'crosssell-rule':
+        /** @var \Magento\Catalog\Block\Product\ProductList\Crosssell $block */
+        if ($exist = $block->hasItems()) {
+            $type = 'crosssell';
+            $class = $type;
+
+            $image = 'cart_cross_sell_products';
+            $title = __('More Choices:');
+            $items = $block->getItemCollection();
+
+            $showAddTo = true;
+            $showCart = true;
+            $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+            $description = false;
+            $canItemsAddToCart = false;
+        }
+        break;
+
+    case 'crosssell':
+        /** @var \Magento\Catalog\Block\Product\ProductList\Crosssell $block */
+        if ($exist = count($block->getItems())) {
+            $type = 'crosssell';
+            $class = $type;
+
+            $image = 'cart_cross_sell_products';
+            $title = __('More Choices:');
+            $items = $block->getItems();
+
+            $showAddTo = true;
+            $showCart = true;
+            $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+            $description = false;
+            $canItemsAddToCart = false;
+        }
+        break;
+
+    default:
+        $exist = null;
+}
+?>
+
+<?php if ($exist):?>
+
+        <?php if ($type == 'related' || $type == 'upsell'): ?>
+            <?php if ($type == 'related'): ?>
+			    <div class="col-sm-12 col-md-12">
+                <div class="<?= /* @escapeNotVerified */ $class ?>" data-mage-init='{"relatedProducts":{}}' data-limit="<?= /* @escapeNotVerified */ $limit ?>" data-shuffle="<?= /* @escapeNotVerified */ $shuffle ?>">
+            <?php else: ?>
+			<div class="col-sm-12 col-md-12">
+                <div class="<?= /* @escapeNotVerified */ $class ?>" data-mage-init='{"upsellProducts":{}}' data-limit="<?= /* @escapeNotVerified */ $limit ?>" data-shuffle="<?= /* @escapeNotVerified */ $shuffle ?>">
+            <?php endif; ?>
+        <?php else: ?>
+		<div class="col-sm-12 col-md-9">
+            <div class="<?= /* @escapeNotVerified */ $class ?>">
+        <?php endif; ?>
+        <div class="block-title title">
+            <strong id="block-<?= /* @escapeNotVerified */ $class ?>-heading" role="heading" aria-level="2"><?= /* @escapeNotVerified */ $title ?></strong>
+        </div>
+        <div class="block-content content upsell_related<?php if ($type == 'crosssell'): ?>_crosssell<?php endif; ?>" aria-labelledby="block-<?= /* @escapeNotVerified */ $class ?>-heading">
+            <div class="products wrapper grid products-grid products-<?= /* @escapeNotVerified */ $type ?>">
+                <ol class="products list items product-items <?php if ($type == 'related' || $type == 'upsell'): ?>owl-carousel<?php endif; ?>">
+                    <?php $iterator = 1; ?>
+                    <?php foreach ($items as $_item): ?>
+                    <?php $available = ''; ?>
+                    <?php if (!$_item->isComposite() && $_item->isSaleable() && $type == 'related'): ?>
+                        <?php if (!$_item->getRequiredOptions()): ?>
+                            <?php $available = 'related-available'; ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if ($type == 'related' || $type == 'upsell'): ?>
+                        <?= /* @escapeNotVerified */ ($iterator++ == 1) ? '<li class="item product product-item" style="display: none;">' : '</li><li class="item product product-item" style="display: none;">' ?>
+                    <?php else: ?>
+                        <?= /* @escapeNotVerified */ ($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
+                    <?php endif; ?>
+                    <div class="product-item-info <?= /* @escapeNotVerified */ $available ?>">
+                        <?= /* @escapeNotVerified */ '<!-- ' . $image . '-->' ?>
+                        <div class="product-images">
+                                <a href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>" class="product photo product-item-photo">
+                                <?= $block->getImage($_item, $image)->toHtml() ?>
+                            </a>
+                        </div>
+                        
+                        <div class="product details product-item-details">
+                            <strong class="product name product-item-name"><a class="product-item-link" title="<?= $block->escapeHtml($_item->getName()) ?>" href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>">
+                                <?= $block->escapeHtml($_item->getName()) ?></a>
+                            </strong>
+
+                            <?= /* @escapeNotVerified */ $block->getProductPrice($_item) ?>
+
+                            </div>
+                        </div>
+                        <?= ($iterator == count($items)+1) ? '</li>' : '' ?>
+                    <?php endforeach ?>
+                </ol>
+            </div>
+        </div>
+        <script type="text/javascript">
+            require([
+                'jquery',
+                'mage/mage',
+                'themevast/owl'
+            ], function ($) {
+                'use strict';
+
+                jQuery(".upsell_related .owl-carousel").owlCarousel({
+                    autoplay :false,
+                    items : 5,
+                    smartSpeed : 500,
+                    dotsSpeed : 500,
+                    rewindSpeed : 500,
+                    nav : true,
+                    autoplayHoverPause : true,
+                    dots : false,
+                    scrollPerPage:true,
+                    navText: ['<i class="envy-icon envy-icon-left"></i>','<i class="envy-icon envy-icon-right"></i>'],
+                    margin: 20,
+                    responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    480: {
+                        items:2,
+                    },
+                    768: {
+                        items:2,
+                    },
+                    991: {
+                        items:5,
+                    },                      
+                    1200: {
+                        items:5,
+                    }
+                 }
+                });
+				jQuery(".upsell_related_crosssell .owl-carousel").owlCarousel({
+                    autoplay :false,
+                    items : 4,
+                    smartSpeed : 500,
+                    dotsSpeed : 500,
+                    rewindSpeed : 500,
+                    nav : false,
+                    autoplayHoverPause : true,
+                    dots : false,
+                    scrollPerPage:true,
+                    navText: ['<i class="envy-icon envy-icon-left"></i>','<i class="envy-icon envy-icon-right"></i>'],
+                    margin: 20,
+                    responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    480: {
+                        items:2,
+                    },
+                    768: {
+                        items:2,
+                    },
+                    991: {
+                        items:4,
+                    },                      
+                    1200: {
+                        items:4,
+                    }
+                 }
+                });
+				 
+            });
+        </script>
+    </div>
+</div>
+<?php endif;?>
+
+

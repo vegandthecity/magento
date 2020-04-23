@@ -1,0 +1,130 @@
+/*!
+ *  Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'UniversalisADFStd';
+  src: url('../fonts/UniversalisADFStd-Regular.eot?v=4.4.0');
+  src: url('../fonts/UniversalisADFStd-Regular.eot?#iefix&v=4.4.0') format('embedded-opentype'), 
+  url('../fonts/UniversalisADFStd-Regular.woff?v=4.4.0') format('woff'), 
+  url('../fonts/UniversalisADFStd-Regular.woff2?v=4.4.0') format('woff2'), 
+  url('../fonts/UniversalisADFStd-Regular.ttf?v=4.4.0') format('truetype'), 
+  url('../fonts/UniversalisADFStd-Regular.svg?v=4.4.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HKVenetian';
+  src: url('../fonts/HKVenetian-Regular.eot?v=4.4.0');
+  src: url('../fonts/HKVenetian-Regular.eot?#iefix&v=4.4.0') format('embedded-opentype'), 
+  url('../fonts/HKVenetian-Regular.woff?v=4.4.0') format('woff'), 
+  url('../fonts/HKVenetian-Regular.woff2?v=4.4.0') format('woff2'), 
+  url('../fonts/HKVenetian-Regular.ttf?v=4.4.0') format('truetype'), 
+  url('../fonts/HKVenetian-Regular.svg?v=4.4.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'Envy';
+    src:  url('../fonts/Envy.eot?ephj43');
+    src:  url('../fonts/Envy.eot?ephj43#iefix') format('embedded-opentype'),
+    url('../fonts/Envy.ttf?ephj43') format('truetype'),
+    url('../fonts/Envy.woff?ephj43') format('woff'),
+    url('../fonts/Envy.svg?ephj43#Envy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.envy-icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'Envy' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.envy-icon-filter:before {
+    content: "\e908";
+}
+.envy-icon-left2:before {
+    content: "\e906";
+}
+.envy-icon-location:before {
+    content: "\e904";
+}
+.envy-icon-close2:before {
+    content: "\e907";
+}
+.envy-icon-right2:before {
+    content: "\e90a";
+}
+.envy-icon-close:before {
+    content: "\e903";
+}
+.envy-icon-left:before {
+    content: "\e901";
+}
+.envy-icon-right:before {
+    content: "\e902";
+}
+.envy-icon-bad:before {
+    content: "\e900";
+}
+.envy-icon-home3:before {
+    content: "\e905";
+}
+.envy-icon-user:before {
+    content: "\e971";
+}
+.envy-icon-cog:before {
+    content: "\e994";
+}
+.envy-icon-menu:before {
+    content: "\e9bd";
+}
+
+
+@font-face {
+    font-family: 'Envy2';
+    src:  url('../fonts/Envy2.eot?f1o0np');
+    src:  url('../fonts/Envy2.eot?f1o0np#iefix') format('embedded-opentype'),
+    url('../fonts/Envy2.ttf?f1o0np') format('truetype'),
+    url('../fonts/Envy2.woff?f1o0np') format('woff'),
+    url('../fonts/Envy2.svg?f1o0np#Envy2') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.envy-icon2 {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'Envy2' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.envy-icon2.envy-icon-user:before {
+    content: "\e901";
+}
+.envy-icon2.envy-icon-click:before {
+    content: "\e902";
+}
+.envy-icon2.envy-icon-play:before {
+    content: "\e900";
+}
