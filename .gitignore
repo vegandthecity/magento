@@ -9,6 +9,10 @@
 !/composer.json
 !/README.md
 !/app/code/**/*
+# 2020-04-24 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "Add the `tv_themevast_package` design package to the source control":
+# https://github.com/vegandthecity/magento/issues/24
+!/app/design/frontend/tv_themevast_package/**/*
 !/app/etc/config.php
 /update/
 # 2020-04-06 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
