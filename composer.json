@@ -17,6 +17,7 @@
         "mirasvit/module-cache-warmer": "*",
         "vegandthecity/core": "*",
         "wallee/magento-2-3": "^1.0",
+        "xtento/orderexport": "^2.12",
         "xtento/pdfcustomizer": "2.11.2",
         "yireo/magento2-disablelog2": "*"
     },
