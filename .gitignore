@@ -26,6 +26,10 @@
 # "«Update of the subscription for MBI service has been failed: Not authorized.. Content-Type: text/plain;charset=UTF-8»":
 # https://github.com/vegandthecity/magento/issues/14
 !/vendor/magento/module-analytics/Model/Connector/UpdateCommand.php
+# 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «The category doesn't contain the specified product» / «Die Kategorie enthält nicht das angegebene Produkt»:
+# https://github.com/vegandthecity/magento/issues/28
+!/vendor/magento/module-catalog/Model/CategoryLinkRepository.php
 # 2020-04-11 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «Argument 1 passed to Magento\Elasticsearch\Model\Adapter\FieldMapper\Product\AttributeProvider::getByAttributeCode()
 # must be of the type string, null given,
