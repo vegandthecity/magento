@@ -53,6 +53,10 @@
 # https://github.com/vegandthecity/magento/issues/19
 !/vendor/magento/module-elasticsearch/SearchAdapter/Query/Builder/Sort.php
 # 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «PayPal Express Checkout Token does not exist» / «PayPal Express Checkout Token existiert nicht»:
+# https://github.com/vegandthecity/magento/issues/36
+!/vendor/magento/module-paypal/Controller/Express/AbstractExpress.php
+# 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «We can't initialize Express Checkout» / «Wir konnten die Express-Kaufabwicklung nicht initialisieren»:
 # https://github.com/vegandthecity/magento/issues/35
 !/vendor/magento/module-paypal/Controller/Express/AbstractExpress/Review.php
