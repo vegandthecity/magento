@@ -430,6 +430,10 @@ class Collection extends \Magento\Catalog\Model\ResourceModel\Product\Collection
         try {
             $this->searchResult = $this->getSearch()->search($searchCriteria);
         } catch (Exception $e) {
+        	// 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+			// [Mageplaza_LayeredNavigation] «Sorry, something went wrong. You can find out more in the error log.»:
+			// https://github.com/vegandthecity/magento/issues/34
+        	df_log_e($e, $this);
             throw new LocalizedException(__('Sorry, something went wrong. You can find out more in the error log.'));
         }
 

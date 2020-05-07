@@ -9,6 +9,10 @@
 !/composer.json
 !/README.md
 !/app/code/**/*
+# 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# [Mageplaza_LayeredNavigation] «Sorry, something went wrong. You can find out more in the error log.»:
+# https://github.com/vegandthecity/magento/issues/34
+!/app/code/Mageplaza/LayeredNavigation/Model/ResourceModel/Fulltext/Collection.php
 # 2020-04-24 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # "Add the `tv_themevast_package` design package to the source control":
 # https://github.com/vegandthecity/magento/issues/24
