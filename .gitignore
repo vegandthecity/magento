@@ -18,6 +18,9 @@
 # 2020-04-05 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # "Serve Magento from the `/shop` path": https://github.com/vegandthecity/magento/issues/1
 !/setup/view/layout/layout.phtml
+# 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «Unique constraint violation found»: https://github.com/vegandthecity/magento/issues/32
+!/vendor/magento/framework/EntityManager/EntityManager.php
 # 2020-04-23 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # "How to fix the «Invalid template file» / «require_js.phtml» failure of Magento 2.3.x in Windows?"
 # https://mage2.pro/t/5774
