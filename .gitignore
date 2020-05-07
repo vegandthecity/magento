@@ -27,6 +27,9 @@
 # https://github.com/vegandthecity/magento/issues/14
 !/vendor/magento/module-analytics/Model/Connector/UpdateCommand.php
 # 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «No cache server(s) could be purged»: https://github.com/vegandthecity/magento/issues/30
+!/vendor/magento/module-cache-invalidate/Model/PurgeCache.php
+# 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «The category doesn't contain the specified product» / «Die Kategorie enthält nicht das angegebene Produkt»:
 # https://github.com/vegandthecity/magento/issues/28
 !/vendor/magento/module-catalog/Model/CategoryLinkRepository.php
