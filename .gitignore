@@ -33,6 +33,12 @@
 # «No cache server(s) could be purged»: https://github.com/vegandthecity/magento/issues/30
 !/vendor/magento/module-cache-invalidate/Model/PurgeCache.php
 # 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «Argument 1 passed to Magento\Catalog\Model\Category\FileInfo::removeStorePath()
+# must be of the type string, array given,
+# called in vendor/magento/module-catalog/Model/Category/FileInfo.php on line 167»:
+# https://github.com/vegandthecity/magento/issues/33
+!/vendor/magento/module-catalog/Model/Category/FileInfo.php
+# 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «The category doesn't contain the specified product» / «Die Kategorie enthält nicht das angegebene Produkt»:
 # https://github.com/vegandthecity/magento/issues/28
 !/vendor/magento/module-catalog/Model/CategoryLinkRepository.php
