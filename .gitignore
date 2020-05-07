@@ -39,6 +39,10 @@
 # called in vendor/magento/module-elasticsearch/SearchAdapter/Query/Builder/Sort.php on line 92»
 # https://github.com/vegandthecity/magento/issues/19
 !/vendor/magento/module-elasticsearch/SearchAdapter/Query/Builder/Sort.php
+# 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «Environment emulation nesting is not allowed» / «Environment Emulation Nesting ist nicht erlaubt»:
+# https://github.com/vegandthecity/magento/issues/31
+!/vendor/magento/module-store/Model/App/Emulation.php
 /dev
 /vendor/codeception
 /vendor/magento/framework/Test
