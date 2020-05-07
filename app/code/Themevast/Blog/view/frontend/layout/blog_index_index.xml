@@ -6,6 +6,10 @@
         <referenceContainer name="content">
 		  <block class="Themevast\Blog\Block\Index" name="blog.posts.list" template="post/list.phtml" />
         </referenceContainer>
-		<move element="page.main.title" destination="content.container.wrapper" before="-"/>
+<!-- 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+«Broken reference: The element with the "content.container.wrapper" ID wasn't found»:
+https://github.com/vegandthecity/magento/issues/37
+	<move element="page.main.title" destination="content.container.wrapper" before="-"/>
+-->
     </body>
 </page>
