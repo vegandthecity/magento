@@ -22,6 +22,12 @@
 # 2020-04-05 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # "Serve Magento from the `/shop` path": https://github.com/vegandthecity/magento/issues/1
 !/setup/view/layout/layout.phtml
+# 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "Elasticsearch: `query_shard_exception`:
+# «failed to create query» / `search_phase_execution_exception`: «all shards failed»
+# at vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:636":
+# https://github.com/vegandthecity/magento/issues/42
+!/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php
 # 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «Unique constraint violation found»: https://github.com/vegandthecity/magento/issues/32
 !/vendor/magento/framework/EntityManager/EntityManager.php
