@@ -25,6 +25,12 @@
 # 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «Unique constraint violation found»: https://github.com/vegandthecity/magento/issues/32
 !/vendor/magento/framework/EntityManager/EntityManager.php
+# 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «SessionHandler::read(): The session id is too long or contains illegal characters,
+# valid characters are a-z, A-Z, 0-9 and '-,'
+# in vendor/magento/framework/Session/SaveHandler/Native.php on line 22»:
+# https://github.com/vegandthecity/magento/issues/39
+!/vendor/magento/framework/Session/SaveHandler/Native.php
 # 2020-04-23 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # "How to fix the «Invalid template file» / «require_js.phtml» failure of Magento 2.3.x in Windows?"
 # https://mage2.pro/t/5774
