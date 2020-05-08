@@ -89,6 +89,10 @@
 # 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «Unable to send mail: Unknown error»: https://github.com/vegandthecity/magento/issues/38
 !/vendor/zendframework/zend-mail/src/Transport/Sendmail.php
+# 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "«$_FILES array is empty» at vendor/magento/framework/File/Uploader.php:573":
+# https://github.com/vegandthecity/magento/issues/43
+!/vendor/magento/framework/File/Uploader.php
 /dev
 /vendor/codeception
 /vendor/magento/framework/Test
