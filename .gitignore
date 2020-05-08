@@ -36,6 +36,10 @@
 # https://github.com/vegandthecity/magento/issues/41
 !/vendor/magento/framework/Escaper.php
 # 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "«$_FILES array is empty» at vendor/magento/framework/File/Uploader.php:573":
+# https://github.com/vegandthecity/magento/issues/43
+!/vendor/magento/framework/File/Uploader.php
+# 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «SessionHandler::read(): The session id is too long or contains illegal characters,
 # valid characters are a-z, A-Z, 0-9 and '-,'
 # in vendor/magento/framework/Session/SaveHandler/Native.php on line 22»:
@@ -68,6 +72,10 @@
 # «The category doesn't contain the specified product» / «Die Kategorie enthält nicht das angegebene Produkt»:
 # https://github.com/vegandthecity/magento/issues/28
 !/vendor/magento/module-catalog/Model/CategoryLinkRepository.php
+# 2020-05-09 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «The product that was requested doesn't exist» at vendor/magento/module-catalog/Model/ProductRepository.php:310:
+# https://github.com/vegandthecity/magento/issues/44
+!/vendor/magento/module-catalog/Model/ProductRepository.php
 # 2020-04-11 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «Argument 1 passed to Magento\Elasticsearch\Model\Adapter\FieldMapper\Product\AttributeProvider::getByAttributeCode()
 # must be of the type string, null given,
@@ -89,10 +97,6 @@
 # 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «Unable to send mail: Unknown error»: https://github.com/vegandthecity/magento/issues/38
 !/vendor/zendframework/zend-mail/src/Transport/Sendmail.php
-# 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
-# "«$_FILES array is empty» at vendor/magento/framework/File/Uploader.php:573":
-# https://github.com/vegandthecity/magento/issues/43
-!/vendor/magento/framework/File/Uploader.php
 /dev
 /vendor/codeception
 /vendor/magento/framework/Test
