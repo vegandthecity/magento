@@ -35,6 +35,12 @@
 # "How to fix the «Invalid template file» / «require_js.phtml» failure of Magento 2.3.x in Windows?"
 # https://mage2.pro/t/5774
 !/vendor/magento/framework/View/Element/Template/File/Validator.php
+# 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «SQLSTATE[42000]: Syntax error or access violation:
+# 1139 Got error 'repetition-operator operand invalid' from regexp <…>»
+# at vendor/magento/framework/Webapi/ErrorProcessor.php:208
+# https://github.com/vegandthecity/magento/issues/40
+!/vendor/magento/framework/Webapi/ErrorProcessor.php
 # 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # "«Update of the subscription for MBI service has been failed: Not authorized.. Content-Type: text/plain;charset=UTF-8»":
 # https://github.com/vegandthecity/magento/issues/14
