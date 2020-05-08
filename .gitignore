@@ -64,6 +64,9 @@
 # «Environment emulation nesting is not allowed» / «Environment Emulation Nesting ist nicht erlaubt»:
 # https://github.com/vegandthecity/magento/issues/31
 !/vendor/magento/module-store/Model/App/Emulation.php
+# 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «Unable to send mail: Unknown error»: https://github.com/vegandthecity/magento/issues/38
+!/vendor/zendframework/zend-mail/src/Transport/Sendmail.php
 /dev
 /vendor/codeception
 /vendor/magento/framework/Test
