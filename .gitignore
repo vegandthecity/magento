@@ -26,6 +26,10 @@
 # «Unique constraint violation found»: https://github.com/vegandthecity/magento/issues/32
 !/vendor/magento/framework/EntityManager/EntityManager.php
 # 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "«DOMDocument::loadHTML(): Tag date invalid in Entity, line: 1 at vendor/magento/framework/Escaper.php:89»":
+# https://github.com/vegandthecity/magento/issues/41
+!/vendor/magento/framework/Escaper.php
+# 2020-05-08 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «SessionHandler::read(): The session id is too long or contains illegal characters,
 # valid characters are a-z, A-Z, 0-9 and '-,'
 # in vendor/magento/framework/Session/SaveHandler/Native.php on line 22»:
