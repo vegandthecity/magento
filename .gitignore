@@ -28,6 +28,12 @@
 # at vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:636":
 # https://github.com/vegandthecity/magento/issues/42
 !/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php
+# 2020-05-09 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# «Integrity constraint violation:
+# 1062 Duplicate entry <…> at vendor/magento/framework/DB/Statement/Pdo/Mysql.php:91» /
+# «Unique constraint violation found at vendor/magento/framework/EntityManager/Operation/Update.php:121»:
+# https://github.com/vegandthecity/magento/issues/45
+!/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php
 # 2020-05-07 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 # «Unique constraint violation found»: https://github.com/vegandthecity/magento/issues/32
 !/vendor/magento/framework/EntityManager/EntityManager.php
